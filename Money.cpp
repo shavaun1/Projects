@@ -26,11 +26,11 @@ using namespace std;
 class MOney
 {
   public:
-    friend MOney add(MOney amount1, MOney amount2);
+    friend MOney add(const MOney& amount1, const MOney& amount2);
     //Precondtion: amount1 and amount2 have been given values.
     //Return the sum of the values of amount1 and amount2.
 
-    friend bool equal (MOney amount1, MOney amount2);
+    friend bool equal (const MOney& amount1, const MOney& amount2);
     //Precondtion: amount1 and amount 2 have been given values.
     //Return true if the amount1 and amount2 have the same value;
     //otherwise, return false.
@@ -46,7 +46,7 @@ class MOney
     MOney();
     //Initializes the object so its value represnts $0.00.
 
-    double getValue();
+    double getValue() const;
     //Precondtion: The callling object has been given a value.
     //Rturn the amount of money recorded in the data of the calling object.
 
@@ -57,7 +57,7 @@ class MOney
     //PostConditin: The value of the valling object has been set to 
     //the amount of money read from the input stream ins.
     
-    void outPut(ostream& outs);
+    void outPut(ostream& outs) const;
     //Precondtion:If outs is a file output stream, then outs has already been 
     //connectd to a file.
     //PostConditin: A dollar sign and the amount of money recorded
@@ -98,7 +98,7 @@ int main()
   return 0;
 }
 
-MOney add(MOney amount1, MOney amount2)
+MOney add(const MOney& amount1, const MOney& amount2)
 {
   MOney temp;
    
@@ -106,7 +106,7 @@ MOney add(MOney amount1, MOney amount2)
   return temp;
 }
 
-bool equals(MOney amount1, MOney amount2)
+bool equals(const MOney& amount1, const MOney& amount2)
 {
   return (amount1.allCents == amount2.allCents);
 }
@@ -132,7 +132,7 @@ MOney::MOney():allCents(0)
 
 }
 
-double MOney::getValue()
+double MOney::getValue() const
 {
   return(allCents * 0.01);
 }
@@ -167,7 +167,7 @@ void MOney::input(istream& ins)
     allCents = -allCents;
 }
 
-void MOney::outPut(ostream& outs)
+void MOney::outPut(ostream& outs) const
 {
   long positiveCents, dollars, cents;
   positiveCents = labs(allCents);
