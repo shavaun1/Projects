@@ -137,57 +137,10 @@ double MOney::getValue() const
   return(allCents * 0.01);
 }
 
-void MOney::input(istream& ins)
-{
-  char oneChar, decimalPoint, digit1, digit2;
-  long dollars;
-  int cents;
-  bool negative;
 
-  ins >> oneChar;
-  if(oneChar == ' ')
-  {
-    negative = true;
-    ins >> oneChar;
-  }
-  else
-    negative = false;
 
-  ins >> dollars >> decimalPoint >> digit1 >> digit2;
 
-  if(oneChar != '$' || decimalPoint != '.' || !isdigit(digit1) || !isdigit(digit2))
-  {
-    cout<<"Error illegal form for money input\n";
-    exit(1);
-  }
-  cents =  ditiToInt(digit1) * 10 + ditiToInt(digit2);
 
-  allCents = dollars * 100 + cents;
-  if(negative)
-    allCents = -allCents;
-}
-
-void MOney::outPut(ostream& outs) const
-{
-  long positiveCents, dollars, cents;
-  positiveCents = labs(allCents);
-  dollars = positiveCents / 100;
-  cents = positiveCents % 100;
-
-  if(allCents < 0)
-    outs << "-$" << dollars << '.';
-  else
-    outs<<"$"<< dollars << '.';
-
-  if(cents < 10)
-    outs << '0';
-  outs << cents;
-}
-
-int ditiToInt(char c)
-{
-  return (static_cast<int>(c) - static_cast<int>('0'));
-}
 
 
 
