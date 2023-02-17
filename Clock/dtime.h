@@ -1,5 +1,6 @@
 
-
+#ifdef  DTIME_H
+#define DTIME_H
 #include <iostream>
 using namespace std;
 
@@ -24,3 +25,5 @@ private:
 int hour;
 int minute;
 };
+
+#endif
