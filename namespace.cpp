@@ -21,7 +21,7 @@
 
 
 
-using namespace std;
+using std::cout;
 
 namespace shavaun
 {
