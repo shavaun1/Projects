@@ -4,6 +4,10 @@
 #include <iostream>
 using namespace std;
 
+
+using namespace dtimesavitch
+{
+
 class DigitalTime
 {
 public:
@@ -25,5 +29,7 @@ private:
 int hour;
 int minute;
 };
+
+}
 
 #endif

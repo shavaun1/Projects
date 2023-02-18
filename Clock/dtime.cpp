@@ -16,6 +16,9 @@ bool operator ==(const DigitalTime& time1, const DigitalTime& time2)
   return (time1.hour == time2.hour && time1.minute == time2.minute);
 }
 
+namespace dtimesavitch
+{
+
 DigitalTime::DigitalTime(int theHour, int theMinute)
 {
 if (theHour< 0 || theHour> 23 || theMinute< 0 || theMinute> 59)
@@ -62,6 +65,11 @@ readHour(ins, theObject.hour);
 readMinute(ins, theObject.minute);
 return ins;
 }
+
+}
+
+namespace
+{
 int digitToInt(char c)
 {
 return (static_cast <int>(c) - static_cast<int>('0'));
@@ -112,4 +120,6 @@ if (theHour < 0 || theHour > 23)
 cout<< "Error illegal input to readHour\n";
 exit(1);
 }
+}
+
 }
