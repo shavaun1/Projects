@@ -29,8 +29,8 @@ struct Node
 typedef Node* NodePtr;
 
 void headInsert(NodePtr& head, int theNumber);
-
-
+void headInsert(NodePtr& head, int target);
+void insert(NodePtr afterMe, int theNumber);
 
 void headInsert(NodePtr& head, int theNumber)
 {
@@ -42,3 +42,35 @@ void headInsert(NodePtr& head, int theNumber)
   tempPtr->link = head;
   head = tempPtr;
 }
+
+void headInsert(NodePtr& head, int target)
+{
+  NodePtr here = head;
+
+  if(here == NULL)
+  {
+    return NULL;
+  }
+  else
+  {
+    while(here->data != target && here->link != NULL)
+      here = here->link;
+
+    if(here->data == target)
+      return here;
+    else
+      return NULL;
+  }
+}
+
+void insert(NodePtr afterMe, int theNumber)
+{
+  NodePtr tempPtr;
+  tempPtr = new Node;
+
+  tempPtr->link = afterMe->link;
+  afterMe->link = tempPtr;
+}
+
+
+
