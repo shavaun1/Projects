@@ -26,6 +26,13 @@ struct Node
   Node *link;
 };
 
+struct Node1
+{
+int data;
+Node1 *forwardLink;
+Node1 *backLink;
+}
+
 typedef Node* NodePtr;
 
 void headInsert(NodePtr& head, int theNumber);
