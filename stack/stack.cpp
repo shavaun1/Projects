@@ -53,8 +53,9 @@ namespace stacksavitch
   void Stack::push(char theSymbol)
   {
     StackFramePtr tempPtr;
-    tempPtr = new StackFramePtr;
+    tempPtr = new StackFrame;
     tempPtr->data = theSymbol;
+    tempPtr->link = top;
     top = tempPtr;
   }
 
