@@ -28,10 +28,10 @@ int main()
   writeVertical(3);
 
   cout<<"writeVertical(12): "<<endl;
-  writeVertical(12);
+  writeVertical(1234);
 
   cout<<"writeVertical(123): "<<endl;
-  writeVertical(123);
+  writeVertical(12345);
 
   return 0;
 }
