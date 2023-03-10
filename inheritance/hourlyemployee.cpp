@@ -46,7 +46,7 @@ namespace employeessavitch
     cout<<"Check STub: NOT NEGOTIABLE\n";
     cout<<"Employee Number: "<<getSSN()<< endl;
     cout<<"Hourly Employee, \nHours worked: "<< hours
-      <<" Rate: "<<wage_rate << " Pay: "<< getNetpay()<< endl;
+      <<" Rate: "<<wageRate << " Pay: "<< getNetpay()<< endl;
     cout<<"______________________________________________\n";
   }
 }
