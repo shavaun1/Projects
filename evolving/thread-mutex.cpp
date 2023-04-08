@@ -19,8 +19,9 @@ void func(int a)
 
 int main()
 {
-  thread t1(func, 10);
-  thread t2(func, 20);
-  t1.join();
-  t2.join();
+  thread tArr[10];
+  for(int i = 0; i < 10; i++)
+    tArr[i] = thread(func, i);
+  for(int i = 0; i < 10; i++)
+    tArr[i].join();
 }
