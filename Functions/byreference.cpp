@@ -1,10 +1,13 @@
 #include <iostream>
-using namespace std;
+#include"packages/byreference.h"
 
-void doubleIt(int &);
+
 
 int main()
 {
+  using std::cout;
+  using std::endl;
+
   int x = 10;
   cout<<"Before calling the function doubleIt, x is "<< x << endl;
   doubleIt(x);
@@ -14,8 +17,4 @@ int main()
 
 }
 
-void doubleIt(int &y)
-{
-  y = 2 * y;
-  cout <<"After double in the function, y is "<< y << endl;
-}
+

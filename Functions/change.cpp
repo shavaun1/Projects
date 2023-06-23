@@ -1,17 +1,14 @@
 #include<iostream>
 #include<string>
-using namespace std;
+#include"packages/change.h"
 
-void Output(string coin, int amount)
-{
-  if(amount > 0)
-  {
-    cout<<"# "<< coin <<" =\t"<< amount << endl;
-  }
-}
 
 int main()
 {
+  using std::cout;
+  using std::cin;
+  using std::endl;
+
   int amount; 
   int quarters, dimes, nickels, pennies;
 

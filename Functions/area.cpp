@@ -1,11 +1,17 @@
 #include <iostream>
 #include <iomanip>
-using namespace std;
+#include "packages/area.h"
 
-double area(double, double);
 
 int main()
 {
+
+  using std::cout;
+  using std::cin;
+  using std::endl;
+  using std::fixed;
+  using std::setw;
+  using std::setprecision;
   double x = 3., y = 7.2, res;
 
   res = area(x, y+1);
@@ -20,8 +26,8 @@ int main()
 
 }
 
-double area(double width, double len)
-{
-  return (width * len);
-}
+
+
+ 
+
 

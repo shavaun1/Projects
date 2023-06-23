@@ -1,14 +1,6 @@
 #include<iostream>
-using namespace std;
+#include"packages/baday.h"
 
-void Sing()
-{
-  cout<<"Happy birthday to you"<< endl;
-  cout <<"Happy birthday to you"<< endl;
-  cout<<"Happy birthday dear "<<endl;
-  cout<<"Happy birthday to you"<<endl;
-  cout<<endl;
-}
 
 int main()
 {

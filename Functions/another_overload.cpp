@@ -1,14 +1,18 @@
 #include<iostream>
-using namespace std;
+#include "packages/another_overload.h"
 
-double ave(double n1, double n2);
+
+
 //Return the average of the two numbers n1 and n2
 
-double ave(double n1, double n2, double n3);
 //Return the average of the three numbers n1, n2, and m3.
 
 int main()
 {
+
+  using std::cout;
+  using std::cin;
+  using std::endl;
   cout<<"The average of 2.0, 2.5, and 3.0 is "
     <<ave(2.0, 2.5, 3.0)<<endl;
   cout<<"The average of 4.5 and 5.5 is "
@@ -17,12 +21,3 @@ int main()
   return 0;
 }
 
-double ave(double n1, double n2)
-{
-  return((n1 + n2)/2.0);
-}
-
-double ave(double n1, double n2, double n3)
-{
-  return((n1 + n2 + n3)/3.0);
-}

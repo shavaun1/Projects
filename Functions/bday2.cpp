@@ -1,15 +1,6 @@
 #include<iostream>
+#include "packages/bday2.h"
 #include<string>
-using namespace std;
-
-void Sing(string person)
-{
-  cout<<"Happy birthday to you"<<endl;
-  cout<<"Happy birthday to you"<<endl;
-  cout<<"Happy birthday dear "<< person <<endl;
-  cout<<"Happy birthday to you"<<endl;
-  cout<< endl;
-}
 
 int main()
 {
