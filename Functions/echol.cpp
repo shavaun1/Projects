@@ -1,14 +1,13 @@
 #include <string>
 #include<iostream>
-using std::cin;
-using std::cout;
-using std::endl;
-using std::string;
+#include"packages/echo.h"
 
-void echo(const string message);
 
 int main()
 {
+  using std::cout;
+  using std::endl;
+
   string word;
   cout<<"Enter your word: ";
   cin >> word;
@@ -19,7 +18,4 @@ int main()
 
 }
 
-void echo(const string message)
-{
-  cout<< message << endl;
-}
+

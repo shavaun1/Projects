@@ -1,7 +1,7 @@
 #include<iostream>
-using namespace std;
+#include"packages/formal.h"
 
-const double RATE = 150.00;
+
 
 double fee(int hoursWorked, int minutesWorked);
 //returns the charges for hoursWorked hours and 
@@ -9,6 +9,10 @@ double fee(int hoursWorked, int minutesWorked);
 
 int main()
 {
+
+  using std::cout;
+  using std::cin;
+  using std::endl;
   int hours, minutes;
   double bill;
 
@@ -21,19 +25,12 @@ int main()
 
   bill = fee(hours, minutes);
 
-  cout.setf(ios::fixed);
-  cout.setf(ios::showpoint);
+  cout.setf(std::ios::fixed);
+  cout.setf(std::ios::showpoint);
   cout.precision(2);
   cout<<"For "<< hours <<" hours and "<<minutes
     <<" minutes, your bill is $"<< bill <<endl;
   return 0;
 }
 
-double fee(int hoursWorked, int minutesWorked)
-{
-  int quartedHours;
 
-  minutesWorked = hoursWorked*60 + minutesWorked;
-  quartedHours = minutesWorked/15;
-  return(quartedHours * RATE);
-}

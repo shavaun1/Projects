@@ -1,7 +1,6 @@
 #include <iostream>
-using namespace std;
+#include"packages/defaults.h"
 
-void showVolume(int length, int width = 1, int height = 1);
 //Returns the volume of a box
 //if no height is given, the height is assumed to be 1.
 //If neither height nor width is given, both are assumed to be 1.
@@ -15,10 +14,4 @@ int main()
   return 0;
 }
 
-void showVolume(int length, int width, int height)
-{
-  cout<<"Volume of a box with \n"
-    <<"Length = "<< length <<" ,Width = "<<width << endl
-    <<"and Heigth = "<< height
-    <<" is "<<length*width*height<< endl;
-}
+
