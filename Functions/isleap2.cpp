@@ -1,13 +1,13 @@
 #include<iostream>
-using namespace std;
-
-bool IsLeapYear(int year)
-{
-  return(year % 400 == 0) || ( year % 4 == 0 && year % year % 100 != 0 );
-}
+#include"packages/isleap2.h"
 
 int main()
 {
+
+  using std::cout;
+  using std::cin;
+  using std::endl;
+
   int year;
   cout<<"enter a year ";
   cin>> year;

@@ -1,25 +1,13 @@
 #include<iostream>
-using namespace std;
+#include"packages/isleap.h"
 
-bool IsleapYear(int year)
-{
-  if(year % 400 == 0)
-  {
-    return true;
-  }
-  else if(year % 100 == 0)
-  {
-    return false;
-  }
-  else if(year % 4 == 0)
-  {
-    return true;
-  }
-  return false;
-}
 
 int main()
 {
+
+  using std::cout;
+  using std::endl;
+  using std::cin;
   int year;
   cout<<"enter a year: ";
   cin >> year;

@@ -1,11 +1,15 @@
 #include <iostream>
 #include <iomanip>
-using namespace std;
+#include"packages/invest.h"
 
-float compound(float principal, float rate, int time);
 
 int main()
 {
+
+  using std::cout;
+  using std::cin;
+  using std::endl;
+
   int principal, time;
   float rate;
 
@@ -16,15 +20,10 @@ int main()
   cout <<"\n Enter time (in years): ";
   cin >> time;
   cout <<"\n\nFinal value : ";
-  cout<< setiosflags(ios::fixed)<< setprecision(2);
+  cout<< setiosflags(std::ios::fixed)<< std::setprecision(2);
   cout<< compound(principal,rate,time);
 
   return 0;
 }
 
-float compound(float principal, float rate, int time)
-{
-  for(int count = 0; count < time; count++)
-    principal*= (1+rate/100);
-  return principal;
-}
+

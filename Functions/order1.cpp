@@ -1,6 +1,7 @@
 #include <iostream>
+#include"packages/order1.h"
 
-void order(int*, int*);
+
 
 int main()
 {
@@ -13,14 +14,4 @@ int main()
   cout<<i <<'\t' << j << endl;
 }
 
-void order(int* p, int* q)
-{
-  int temp;
 
-  if(*p > *q)
-  {
-    temp = *p;
-    *p = *q;
-    *q = temp; 
-  }
-}

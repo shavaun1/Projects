@@ -1,7 +1,6 @@
 #include <iostream>
-using namespace std;
+#include"packages/localScope.h"
 
-double estimateOfTotal(int minPeas, int maxPeas, int PodCount);
 //returns an estimate of the total number of peas harvested.
 //the formal parameter podcount is the number of peaas harvested.
 //the formal parameter minPeas and maxPeas are the minimun
@@ -9,6 +8,11 @@ double estimateOfTotal(int minPeas, int maxPeas, int PodCount);
 
 int main()
 {
+
+  using std::cout;
+  using std::cin;
+  using std::endl;
+
   int maxCount, minCount, PodCount;
   double averagePea, yield;
 
@@ -22,8 +26,8 @@ int main()
   yield = 
     estimateOfTotal(minCount, minCount,PodCount) * averagePea;
 
-  cout.setf(ios::fixed);
-  cout.setf(ios::showpoint);
+  cout.setf(std::ios::fixed);
+  cout.setf(std::ios::showpoint);
   cout.precision(3);
   cout << "Min number of peas per pod = "<< minCount << endl
     <<"Max number of peas per pod = "<<maxCount << endl
@@ -36,10 +40,4 @@ int main()
   return 0;
 }
 
-double estimateOfTotal(int minPeas, int maxPeas, int PodCount)
-{
-  double averagePea;
 
-  averagePea = (maxPeas + minPeas)/ 2.0;
-  return(PodCount * averagePea);
-}
