@@ -1,6 +1,5 @@
 #include<iostream>
-
-void printMessage(void);
+#include"packages/printMessage.h"
 
 int main()
 {
@@ -21,11 +20,3 @@ int main()
   return 0;
 }
 
-void printMessage(void)
-{
-  using std::cout;
-
-  int static times = 0;
-  times++;
-  cout<<"THis function called "<< times << " times\n";
-}

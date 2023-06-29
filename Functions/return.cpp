@@ -1,19 +1,16 @@
 #include <iostream>
-using namespace std;
+#include"packages/return.h"
 
-int makeSum();
+
 
 int main()
 {
+  using std::endl;
+  using std::cout;
+
   int sum = makeSum();
   cout << sum << endl;
   return 0;
 }
 
-int makeSum()
-{
-  int a,b;
-  cout<<"Enter two integers: ";
-  cin >> a >> b;
-  return a + b;
-}
+

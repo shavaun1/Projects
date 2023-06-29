@@ -1,10 +1,12 @@
 #include<iostream>
-using namespace std;
+#include"packages/random.h"
 
-double totalCost(int numberParameter, double priceParameter);
 
 int main()
 {
+  using std::cout;
+  using std::cin;
+  using std::endl;
   double price, bill;
   int number;
 
@@ -13,10 +15,10 @@ int main()
   cout<<"Enter the price per item $";
   cin >> price;
 
-  bill = totalCost(number, price);
+  bill = totalCost1(number, price);
 
-  cout.setf(ios::fixed);
-  cout.setf(ios::showpoint);
+  cout.setf(std::ios::fixed);
+  cout.setf(std::ios::showpoint);
   cout.precision(2);
   cout<<number<<" iteams at "
     <<"$"<<price<<" each.\n"

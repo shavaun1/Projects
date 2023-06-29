@@ -1,13 +1,14 @@
 #include<iostream>
-#include<cmath>
-using namespace std;
+#include"packages/round.h"
 
-int rounded(double number);
 //assuming number >= 0;
 //returns number rounded to the nearest integer.
 
 int main()
 {
+  using std::cout;
+  using std::cin;
+  using std::endl;
   double doubleValue;
   char ans;
 
@@ -25,7 +26,3 @@ int main()
   return 0;
 }
 
-int rounded(double number)
-{
-  return static_cast<int>(floor(number + 0.5));
-}

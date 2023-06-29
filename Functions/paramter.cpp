@@ -1,10 +1,14 @@
 #include <iostream>
-using namespace std;
+#include "packages/paramter.h"
 
 int makeSum(int, int);
 
 int main()
 {
+  using std::cout;
+  using std::cin;
+  using std::endl;
+
   int a,b,sum;
   cout<<"Enter two integers: ";
   cin >> a >> b;
@@ -14,7 +18,3 @@ int main()
   return 0;
 }
 
-int makeSum(int x, int y)
-{
-  return x + y;
-}

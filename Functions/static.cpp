@@ -1,26 +1,15 @@
 #include <iostream>
-using namespace std;
+#include"packages/static.h"
 
-void first()
-{
-  int x = 25;
-  cout<<"local x in the function first is "<< x << endl;
-  x++;
-}
-
-void second()
-{
-  static int x = 1;
-  cout<<"This function is called "<< x << " times "<< endl;
-  ++x;
-}
 
 int main()
 {
-  first();
-  second();
+  using std::endl;
+  using std::cout;
+  first1();
+  second1();
   cout<<"Calling functions once more "<<endl;
-  first();
-  second();
+  first1();
+  second1();
   return 0;
 }

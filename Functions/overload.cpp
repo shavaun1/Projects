@@ -1,11 +1,12 @@
 #include <iostream>
-using namespace std;
+#include"packages/overload.h"
 
-int max(int, int);
-int max(int, int, int);
 
 int main()
 {
+  using std::cout;
+  using std::cin;
+  using std::endl;
   int x,y,z;
   cout<<"PLease enter three numbers: ";
   cin>>x>>y>>z;
@@ -15,12 +16,4 @@ int main()
   return 0;
 }
 
-int max(int a, int b)
-{
-  return (a > b ? a : b);
-}
 
-int max(int a, int b, int c)
-{
-  return max(max(a,b),c);
-}

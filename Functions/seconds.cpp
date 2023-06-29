@@ -1,10 +1,13 @@
 #include <iostream>
-using namespace std;
+#include"packages/seconds.h"
 
-int clock(int,int,int);
 
 int main()
 {
+  using std::endl;
+  using std::cout;
+  using std::cin;
+
   int h, m, s;
 
   cout<<"Enter hours, minutes, seconds: ";
@@ -14,9 +17,3 @@ int main()
   return 0;
 }
 
-int clock(int x, int y, int z)
-{
-  int seconds = (x * 3600) + (y * 60) + z;
-
-  return seconds;
-}

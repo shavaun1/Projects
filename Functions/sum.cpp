@@ -2,12 +2,13 @@
 #include<iomanip>
 #include<ctime>
 #include<cstdlib>
-using namespace std;
+#include"packages/sum.h"
 
-long sum(long a1, long a2, long a3 = 0, long a4 = 0);
 
 int main()
 {
+  using std::endl;
+  using std::cout;
   cout<<" **** Computing sums ***\n"
     << endl;
 
@@ -15,21 +16,17 @@ int main()
   long res, a = rand()/10, b = rand() / 10, 
        c = rand()/10, d = rand()/10;
 
-  res = sum(a,b);
+  res = sums(a,b);
   cout<<a <<" + "<< b <<" = "<< res << endl;
 
-  res = sum(a,b,c);
+  res = sums(a,b,c);
   cout<< a <<" + "<< b << " + "<< c << " + "<< d
     <<" = "<< res << endl;
 
-  res = sum(a,b,c,d);
+  res = sums(a,b,c,d);
   cout<<a << " + "<< b <<" + "<< c << " + "<< d
     <<" = "<< res << endl;
 
   return 0;
 }
 
-long sum(long a1, long a2, long a3, long a4)
-{
-  return(a1 + a2 + a3 + a4);
-}
