@@ -1,26 +1,13 @@
 #include <iostream>
-using namespace std;
+#include "header/partially_filled.h"
 
-const int MAX_NUMBER_SCORES = 10;
-
-void fillArray(int a[], int size, int& numberUsed);
-//Precondition:: size is the decleared size of the array a.
-//Postcondition: numberUsed is the number of values stored in a.
-//a[0] through a[numbered-1] have been filled with
-//nonnegative integers read from the keyboard.
-
-double computeAVerage(const int[], int numberUsed);
-//Precondition: a[0] through a[numberUsed-1] have values;
-//numberUsed > 0.
-//Returns the average of numbers a[0] through a[numberUsed-1].
-
-void showDifference(const int[], int numberUsed);
-//Precondition: The first numberUsed indexed variables of a have values.
-//Postcondition:Gives screen output showing how much each of the first 
-//numberUsed elements of the array a differs from their average.
 
 int main()
 {
+  const int MAX_NUMBER_SCORES = 10;
+  using std::cout;
+
+
   int score[MAX_NUMBER_SCORES], numberUsed;
   cout<<"This program reads golf scores and show\n"
     <<"how much each differes from the average.\n";
@@ -33,45 +20,4 @@ int main()
   return 0;
 }
 
-void fillArray(int a[], int size, int& numberUsed)
-{
-  cout<<"Enter up to "<<size<< " nonnegative whole numbers.\n"
-    <<"Mark the end of the list with a nonnegative number.\n";
-    int next, index = 0;
-  cin >> next ;
-  while((next >= 0)&&(index < size))
-  {
-    a[index] = next;
-    index++;
-    cin >> next;
-  }
-  numberUsed = index;
-}
 
-double computeAVerage(const int a[], int numberUsed)
-{
-  double total = 0;
-  for(int index = 0; index < numberUsed; index++)
-    total = total + a[index];
-  if(numberUsed > 0)
-  {
-    return(total/numberUsed);
-  }
-  else
-  {
-    cout<<"ERROR: number of elements is 0 in computeAVerage.\n"
-      <<"computeAVerage return 0.\n";
-    return 0;
-  }
-}
-
-void showDifference(const int a[], int numberUsed)
-{
-  double average = computeAVerage(a,numberUsed);
-  cout<<"Avergae of the "<<numberUsed
-    <<" score = "<< average << endl
-    <<"The scores are:\n";
-  for(int index = 0; index < numberUsed; index++)
-    cout<<a[index] <<" differes from average by "
-      <<(a[index] - average) << endl;
-}
