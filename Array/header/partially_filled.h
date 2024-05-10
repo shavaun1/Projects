@@ -1,7 +1,7 @@
 #ifndef AREA_H
 #define AREA_H
 
-void fillArray(int a[], int size, int& numberUsed);
+void fillzArray(int a[], int size, int& numberUsed);
 //Precondition:: size is the decleared size of the array a.
 //Postcondition: numberUsed is the number of values stored in a.
 //a[0] through a[numbered-1] have been filled with

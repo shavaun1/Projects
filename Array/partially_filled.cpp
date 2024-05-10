@@ -14,7 +14,7 @@ int main()
 
   cout<<"Enter golf scores:\n";
 
-  fillArray(score, MAX_NUMBER_SCORES, numberUsed);
+  fillzArray(score, MAX_NUMBER_SCORES, numberUsed);
   showDifference(score, numberUsed);
 
   return 0;

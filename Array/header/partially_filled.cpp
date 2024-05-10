@@ -1,7 +1,7 @@
 #include"partially_filled.h"
 #include <iostream>
 
-void fillArray(int a[], int size, int& numberUsed)
+void fillzArray(int a[], int size, int& numberUsed)
 {
   using std::cout;
   using std::cin;
