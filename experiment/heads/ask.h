@@ -13,6 +13,7 @@ class Ask{
   Ask(int = 29, int = 1, string = "n");
   int age();
   void quest();
+  void timez();
 };
 #endif
 
