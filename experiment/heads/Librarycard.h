@@ -4,11 +4,8 @@
 using std::string;
 
 class Librarycard{
-  string fullname;
-  int age;
   public:
   void setLibrarycard();
-  void showLibrarycard();
   void clock();
 };
 #endif

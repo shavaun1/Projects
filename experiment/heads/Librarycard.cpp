@@ -3,19 +3,7 @@
 #include <iostream>
 #include<string>
 using std::cout;using std::cin; using std::string;
-using std::endl;
-
-
-void Librarycard::setLibrarycard()
-{
-  string fullname; int age;
-  cout<<"What is your full name? ";
-  getline(cin, fullname);
-  cout <<"What is your age? ";
-  cin >> age;
-  return;
-}
-
+using std::endl; using std::getline;
 
 void Librarycard::clock()
 {
@@ -28,10 +16,24 @@ void Librarycard::clock()
   return;
 }
 
-void Librarycard::showLibrarycard()
-{
-  cout<<"Name: "<<fullname<<endl;
-  cout<<"Age: "<<age<<endl;
-  clock();
-  return;
+ 
+
+ void Librarycard::setLibrarycard()
+ { 
+      string fullname; int age;
+      cout<<"What is your full name? ";
+      std::getline(std::cin,fullname);
+      cout <<"What is your age? ";
+      cin >> age;
+      cout<<"******************************"<<endl;
+      cout<<"******************************"<<endl;
+      cout<<"Name: "<<fullname<<endl;
+      cout<<"Age: "<<age<<endl;
+      clock();
+     return;
 }
+
+
+
+
+
