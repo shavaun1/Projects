@@ -4,19 +4,38 @@
 #include<iostream>
 using std::cout;using std::cin;
 using std::endl; using std::list;
-using std::iterator;
+using std::iterator; using std::string;
 //creating a two genres, with their subgenres.
-string genre() 
+
+
+Librarystore::Librarystore(string na, string auth)
 {
-  list<string>fiction, non-fiction;
-  list<string>iterator it;
+  name = na;
+  author = auth;
+}
 
-  for()
+string Librarystore::autobiography_and_memoir()
+{
+  string n, aa;
+  list<string>am;
+  cout<<"What is the Book name?: ";
+  getline(cin,n);
+  am.push_back(n);
+  cout<<"What is the name of the Author?: ";
+  getline(cin,n);
+  am.push_back(aa);
+}
 
+void Librarystore:
+{
 
+}
+
+string Librarystore::genre()
+{
+  cout<<"Pick:(A) for fiction or (B) non-fiction"
+   <<" to add your book(s) to genres: "<<endl;
   
-  cout<<"Please pick a genre to add your book(s) to: ";
-
-  list<string>genre;
+  cout<<"Please pick from these genres: "<<endl;
 
 }
