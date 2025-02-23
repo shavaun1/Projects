@@ -5,7 +5,7 @@ using std::cout; using std::endl;
 
 int main()
 {
-  int counter = 1;
+  int counter{1};
 
   while(counter <= 10){
     cout<< counter << endl;

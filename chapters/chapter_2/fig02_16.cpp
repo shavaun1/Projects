@@ -5,7 +5,7 @@ using std::cout; using std::cin; using std::endl;
 
 int main()
 {
-  int grade, aCount = 0, bCount = 0, cCount = 0, dCount = 0, fCount = 0;
+  int grade, aCount{ 0}, bCount{0}, cCount{0}, dCount{0}, fCount{0};
 
   cout <<"Enter the letter grades."<< endl
     <<"Enter thr EOF character to end input. "<< endl;

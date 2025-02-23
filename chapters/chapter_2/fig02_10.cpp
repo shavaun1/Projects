@@ -4,7 +4,7 @@ using std::cout; using std::cin; using std::endl;
 
 int main()
 {
-  int passes = 0, failures = 0, studentCounter = 1, result;
+  int passes{0}, failures{0}, studentCounter{1}, result;
 
   while(studentCounter <= 10){
     cout<<"Enter result(1 = pass, 2 = fail): ";

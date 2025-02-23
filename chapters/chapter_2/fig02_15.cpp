@@ -8,7 +8,7 @@ using std::setw; using std::setprecision;
 
 int main()
 {
-  double amount, principal = 1000.0, rate = .05;
+  double amount, principal{1000.0}, rate{.05};
 
   cout<<"Year"<< setw( 21 )
     <<"Amount on deposit"<< endl;

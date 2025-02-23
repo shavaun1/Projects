@@ -7,11 +7,9 @@ using std::ios;
 
 int main()
 {
-  int total,gradeCounter, grade; 
+  int total{0}, gradeCounter{0}, grade; 
   float average;
 
-  total = 0;
-  gradeCounter = 0;
 
   cout<<"Enter grade, -1 to end: ";
   cin >> grade;

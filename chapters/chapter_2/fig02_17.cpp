@@ -3,7 +3,7 @@
 using std::endl; using std::cout;
 int main()
 {
-  int counter = 1;
+  int counter{1};
   
   do{
     cout<< counter <<" ";
