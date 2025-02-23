@@ -6,13 +6,13 @@ using std::endl;
 
 int main()
 {
-  int integer1, integer2, sum;
+  int number1{0}, number2{0}, sum{0};
 
   cout<<"Enter first integer\n";
-  cin>> integer1;
+  cin>> number1;
   cout<<"Enter second integer\n";
-  cin>> integer2;
-  sum = integer1 + integer2;
+  cin>> number2;
+  sum = number1 + number2;
   cout<<"Sum is "<< sum << endl;
 
   return 0;

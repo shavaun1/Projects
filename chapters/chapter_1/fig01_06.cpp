@@ -5,7 +5,7 @@ using std::cout; using std::endl; using std::cin;
 
 int main()
 {
-  int num1, num2;
+  int num1{0}, num2{0};
 
   cout<<"Enter two integers, and I will tell you\n"
     <<"the relationships they satisfy: ";
