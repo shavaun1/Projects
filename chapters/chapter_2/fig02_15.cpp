@@ -13,7 +13,7 @@ int main()
   cout<<"Year"<< setw( 21 )
     <<"Amount on deposit"<< endl;
 
-  for(int year = 1; year <= 10; year++){
+  for(int year {1}; year <= 10; year++){
     amount = principal * pow(1.0 + rate, year);
     cout<< setw(4)<<year
       <<setiosflags(ios::fixed | ios::showpoint)
