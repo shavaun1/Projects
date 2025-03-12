@@ -1,18 +1,19 @@
 //Shifted, scaled integers produced by 1+ rand() % 6
 
 #include<iostream>
-#include<iomanip>
-#include<cstdlib>
+#include<random>
 
-using std::cout; using std::endl; using std::setw;
+using std::cout; using std::endl; using std::default_random_engine; using std::uniform_int_distribution;
 int main()
 {
-  for(int i = 1; i <= 20; i++){
-    cout << setw(10)<<(1 + rand() % 6);
+  default_random_engine engine{}; //engine that produces random numbers
 
-    if(i % 5 == 0)
-      cout << endl;
+  uniform_int_distribution randomDie{1,6}; //distribution that produces the int value 1-6 with equal likelihood
+
+  for(int counter{1}; counter <= 10; ++counter){
+    cout << randomDie(engine) <<" ";
+
   }
 
-  return 0;
+  cout<< '\n';
 }

@@ -1,20 +1,22 @@
 //Roll a six-sided die 6000 times
 
 #include<iostream>
-#include<iomanip>
-#include<cstdlib>
+#include<format>
+#include<random>
 
-using std::endl; using std::cout; using std::setw;
+using std::endl; using std::cout; using std::default_random_engine; using std::uniform_int_distribution; using std::format;
 
 int main()
 {
-  int frequency1 = 0, frequency2 = 0, frequency3 = 0, frequency4 = 0,
-      frequency5 = 0, frequency6 = 0, face;
+  default_random_engine engine{};
+  uniform_int_distribution randomDie{1,6};
 
-  for(int roll = 1; roll <= 6000; roll++){
-    face = 1 + rand() % 6;
+  int frequency1{0}, frequency2{0}, frequency3{0}, frequency4{0},
+      frequency5{0}, frequency6{0};
 
-    switch(face){
+  for(int roll{1}; roll <= 60'000'000; ++roll){
+
+    switch(const int face{randomDie(engine)}){
       case 1:
         ++frequency1;
         break;
@@ -38,13 +40,13 @@ int main()
 
     }
   }
-  cout<<"Face" << setw(13)<<"Frequency"
-    <<"\n  1"<<setw(13) <<frequency1
-    <<"\n  2"<<setw(13)<<frequency2
-    <<"\n  3"<<setw(13)<<frequency3
-    <<"\n  4"<<setw(13)<<frequency4
-    <<"\n  5"<<setw(13)<<frequency5
-    <<"\n  6"<<setw(13)<<frequency6<<endl;
+  cout<<format ("{:>4}{:>13}\n",  "Face", "Frequency");
+   cout <<format("{:>4d}{:13d}\n",1, frequency1)
+    <<format("{:>4d}{:>13d}\n",2,frequency2)
+    <<format("{:>4d}{:>13d}\n",3,frequency3)
+    <<format("{:>4d}{:>13d}\n",4,frequency4)
+    <<format("{:>4d}{:>13d}\n",5,frequency5)
+    <<format("{:>4}{:>13d}\n",6,frequency6)<<endl;
 
   return 0;
 }

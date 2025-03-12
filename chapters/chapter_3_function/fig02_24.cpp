@@ -1,24 +1,23 @@
 //Randomizing die-rolling
 #include<iostream>
 #include<iomanip>
-#include<cstdlib>
+#include<random>
 
-using std::endl; using std::cout; using std::cin; using std::setw;
+using std::endl; using std::cout; using std::cin; using std::default_random_engine; using std::uniform_int_distribution;
 
 int main()
 {
-  unsigned seed;
+  unsigned seed{0};
 
   cout<<"Enter seed: ";
   cin >> seed;
-  srand(seed);
+  
+  default_random_engine engine{seed};
+  uniform_int_distribution randomDie{1,6};
 
-  for(int i = 1; i <= 10; i++){
-    cout<< setw(10) << 1 + rand()%6;
-
-    if(i%5 == 0 )
-      cout<< endl;
+  for(int counter{1}; counter <= 10; ++counter){
+    cout<< randomDie(engine)<<" ";
   }
 
-  return 0;
+  cout<< '\n';
 }
