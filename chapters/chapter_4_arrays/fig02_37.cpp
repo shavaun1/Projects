@@ -1,20 +1,33 @@
 //initializing an array
 #include<iostream>
-#include<iomanip>
+#include<format>
+#include<array>
 
-using std::cout; using std::endl; using std::setw;
+using std::cout; using std::endl; using std::format; using std::array;
 
 int main()
 {
-  int i, n[10];
+  array<int, 5> values; //values is an array of 5 int values 
 
-  for(i = 0; i < 10; i++)
-    n[i] = 0;
+  for(size_t i{0}; i < values.size(); ++i)
+  {
+    values[i] = 0;//set element at location i to 0
+  }
 
-  cout<<"Element"<<setw(13) <<"Value"<< endl;
+  cout<< format("{:>7}{:>19}\n","Element", "Value");
 
-  for(i = 0; i < 10; i++)
-    cout<<setw(7) << i << setw(13) << n[i] << endl;
+  for(size_t i{0}; i < values.size(); ++i)
+  {
+    cout<<format("{:>7}{:>10}\n", i, values[i]);
+  }
+    cout<<format("\n{:>7}{:>10}\n", "Element","Value");
+
+    for(size_t i{0}; i < values.size(); ++i)
+    {
+      cout<<format("{:>7}{:>10}\n", i, values.at(i));
+    }
+
+    values.at(10);
   
   return 0;
 }

@@ -8,7 +8,7 @@ void squareByReference(int &);
 
 int main()
 {
-  int x = 2, z = 4;
+  int x{2}, z{4};
 
   cout<<"x = "<< x <<" before squareByValue\n"
     <<"Value returned by squareByValue: "

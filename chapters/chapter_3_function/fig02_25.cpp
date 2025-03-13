@@ -7,16 +7,16 @@ void a(void);
 void b(void);
 void c(void);
 
-int x = 1;
+int x{1};
 
 int main()
 {
-  int x = 5;
+  int x{5};
 
   cout<<"Local x in outer scope of main is "<< x << endl;
 
   {
-    int x = 7;
+    int x{7};
     cout<<"local x in inner scope of main is "<< x<< endl;
   }
 
@@ -36,7 +36,7 @@ int main()
 
 void a(void)
 {
-  int x = 25;
+  int x{25};
 
   cout<<endl<<"local x in a is "<< x
     <<" after entering a"<< endl;
@@ -47,7 +47,7 @@ void a(void)
 
 void b(void)
 {
-  static int x = 50;
+  static int x{50};
   cout<< endl<<"local static x is "<< x
     <<" onentering b "<< endl;
   ++x;

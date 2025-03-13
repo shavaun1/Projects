@@ -1,18 +1,29 @@
 //Initializing an array with a declartion
 #include<iostream>
-#include<iomanip>
+#include<format>
+#include<array>
 
-using std::cout; using std::endl; using std::setw;
+using std::cout; using std::array; using std::format;
 
 int main()
 {
-  int n[10] = {32,27,64,18,95,14,90,70,60,37};
+  array<int,10> values{32,27,64,18,95,14,90,70,60,37};
 
-  cout <<"Element "<<(13)<<"Value" << endl;
+  for(size_t i{0}; i < values.size(); ++i)
+  {
+    cout<<format("{} ", values.at(i));
+  }
 
-  for(int i = 0; i < 10; i++)
-    cout<< setw(7) << i << setw(13) << n[i] << endl;
+  cout<<"\n\n";
 
-  return 0;
+  array values2{1.1,2.2,3.3,4.4};
+
+  for(size_t i{0}; i < values2.size(); ++i)
+  {
+    cout<<format("{} ", values2.at(i));
+  }
+    
+
+  cout<<"\n";
 }
 

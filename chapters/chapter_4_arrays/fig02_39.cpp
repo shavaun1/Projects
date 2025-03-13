@@ -1,21 +1,26 @@
 //Initialize array s to the even integers from 2 to 20.
 #include<iostream>
-#include<iomanip>
+#include<array>
+#include<format>
 
-using std::cout; using std::endl; using std::setw;
+using std::cout; using std::format; using std::array;
 
 int main()
 {
-  const int arraySize = 10;
-  int j, s[arraySize];
+  array<const int, 10> arraySize{};
+  
 
-  for(j = 0; j < arraySize; j++)
-    s[j] = 2 + 2 * j;
+  for(const int&  arraySize: arraySize)
+  {
+  
+   cout<<format("{}",arraySize);
+  }
 
-  cout<<"Element" << setw(13) << "Value" << endl;
+  cout<<format ("{:>7}{:>13}","Element","Value") ;
 
-  for(j = 0; j < arraySize; j++)
-    cout<< setw(7) << j << setw(13) << s[j] << endl;
-
+  for(const int& arraySize: arraySize)
+  {
+    cout<<format("{:>7}{:>13}","Element","Value");
+  }
   return 0;
 }
