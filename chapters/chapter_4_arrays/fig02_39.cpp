@@ -7,20 +7,32 @@ using std::cout; using std::format; using std::array;
 
 int main()
 {
-  array<const int, 10> arraySize{};
+  array  arraySize{1,2,3,4,5};
   
 
-  for(const int&  arraySize: arraySize)
+  for(const int&  arraySizes: arraySize)
   {
   
-   cout<<format("{}",arraySize);
+   cout<<format("{}",arraySizes);
   }
 
-  cout<<format ("{:>7}{:>13}","Element","Value") ;
-
-  for(const int& arraySize: arraySize)
+  for(int& arraySizes: arraySize)
   {
-    cout<<format("{:>7}{:>13}","Element","Value");
+    arraySizes *= 2;
+  }
+
+  cout<<"\narraysizes after modifcation: ";
+
+  for(const int& arraySizes: arraySize)
+  {
+    cout<<format("{}",arraySizes);
+  }
+
+  cout<<"\n\ncalculating a running total of items' values:\n";
+  for(int total{0}; const int& arraySizes: arraySize)
+  {
+    total += arraySizes;
+    cout<< format("item:{}; total: {}\n", arraySizes, total);
   }
   return 0;
 }
