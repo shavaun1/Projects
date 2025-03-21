@@ -1,23 +1,32 @@
 //Student poll program
 #include <iostream>
-#include<iomanip>
+#include<array>
+#include<format>
 
-using std::endl; using std::cout; using std::setw;
+using std::cout; using std::format; using std::array;
 
 int main()
 {
-  const int responseSize = 40, frequencySize = 11;
-  int responses[responseSize] = {1,2,6,4,8,5,9,7,8,10,1,6,3,8,6,10,3,8,2,7,6,5,7,6,8,6,7,5,6,6,5,6,4,8,10};
-  int frequency[frequencySize] = {0};
+  constexpr array responses {1,2,6,4,8,5,9,7,8,10,1,6,3,8,6,10,3,8,2,7,6,5,7,6,8,6,7,5,6,6,5,6,4,8,10};
+  constexpr size_t frequencySize{11};
+  array<int,frequencySize> frequency{};
 
-  for(int answer = 0; answer < responseSize; answer++)
-    ++frequency[responses[answer]];
+  for(const int& response : responses)
+  {
+       ++frequency.at(response);
+   }
 
-  cout<<"Rating "<< setw(17) << "Frequency"<<endl;
+  cout<<format("{}{:>12}\n", "Rating","Frequency");
 
-  for(int rating = 1; rating < frequencySize; rating++)
-    cout<<setw(6)<<rating
-      <<setw(17)<<frequency[rating]<<endl;
 
-  return 0;
-}
+  for(size_t rating{1}; rating < frequency.size(); ++rating)
+  {
+
+    cout<<format("{:>6}{:>12}\n",rating,frequency.at(rating));//frequency);
+  
+  }
+
+ }
+
+
+

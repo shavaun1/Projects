@@ -1,25 +1,29 @@
 //Roll a six-sided die 6000 times
 #include<iostream>
-#include<iomanip>
-#include<cstdlib>
-#include<ctime>
+#include<format>
+#include<random>
+#include<array>
 
-using std::cout; using std::endl; using std::setw;
+using std::cout; using std::random_device; using std::default_random_engine;using std::uniform_int_distribution; using std::format; using std::array;
 
 int main()
 {
-   const int arraySize = 7;
-   int face, frequency[arraySize] = {0};
+   random_device rd;
+   default_random_engine engine{rd()};
+   uniform_int_distribution randomDie{1,6};
+   constexpr size_t arraySize{7};
+   array<int,arraySize> frequency{};
 
-   srand(time(0));
+   for(int roll{1}; roll <= 60'000'000; ++roll)
+   {
+     ++frequency.at(randomDie(engine));
+    }
 
-   for(int roll = 1; roll <= 6000; roll++)
-     ++frequency[1 + rand()%6];
+   cout<<format("{}{:>13}\n","Face","Frequency");
 
-   cout<<"Face"<<setw(13)<<"Frequency"<<endl;
-
-   for(face = 1; face << arraySize; face++)
-     cout<<setw(4)<<face<<setw(13)<<frequency[face]<< endl;
-
+   for(size_t face{1}; face < frequency.size(); ++face)
+   {
+     cout<<format("{:>4}{:>13}\n",face,frequency.at(face));
+  }
    return 0;
 }

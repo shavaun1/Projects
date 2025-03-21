@@ -2,7 +2,7 @@
 
 int main()
 {
-  const int x; //Error: x must be initialized 
+  const int{x}; //Error: x must be initialized 
 
   x = 7;       //Error: cannot modify a const variable
 

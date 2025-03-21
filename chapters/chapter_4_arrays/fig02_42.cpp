@@ -1,18 +1,21 @@
 //Compute the sum of the elements of the array
 #include<iostream>
+#include<format>
+#include<array>
 
-using std::endl; using std::cout;
+using std::cout; using std::format; using std::array;
+
 
 int main()
 {
-  const int arraySize = 12;
-  int a[arraySize] = {1,3,5,4,7,2,99,16,45,67,89,45};
+  array items {1,3,5,4,7,2,99,16,45,67,89,45};
 
-  int total = 0;
+  int total{0};
 
-  for(int i = 0; i < arraySize; i++)
-    total += a[i];
+  for(const int& item: items)
+  {
+    total += item;
+  }
 
-  cout<<"Total of array element value is "<< total << endl;
-  return 0;
+  cout<<format("Total of array element value is: {}\n", total);
 }

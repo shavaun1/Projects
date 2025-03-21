@@ -4,7 +4,7 @@ using std::endl; using std::cout;
 
 int main()
 {
-  const int x = 7;
+  const int x{7};
 
   cout<<"The value of constant variable x is: "
     << x << endl;
