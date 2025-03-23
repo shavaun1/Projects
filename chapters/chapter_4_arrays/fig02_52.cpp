@@ -1,22 +1,22 @@
 #include"header/fig02_52.h"
 #include<iostream>
+#include<array>
+#include<cstddef>
 
-using std::cout; using std::endl;
+using std::cout; using std::array;
 
 int main()
 {
-  int array1[2][3] = { {1,2,3},{4,5,6} },
-      array2[2][3] = {1,2,3,4,5},
-      array3[2][3] = {{1,2},{4}};
+  constexpr array values1{ array{1,2,3},array{4,5,6} },
+  constexpr  array values2{array{1,2,3},array{4,5,0}};
+      
 
-  cout<<"Values in array1 by row are: "<< endl;
-  printArray(array1);
+  cout<<"Values in array1 by row are: \n";
+  printArray(values1);
 
-  cout<<"Values in array2 by row are:"<< endl;
-  printArray(array2);
+  cout<<"Values in array2 by row are:\n";
+  printArray(values2);
 
-  cout<<"Values in array3 by row are:"<<endl;
-  printArray(array3);
 
   return 0;
 

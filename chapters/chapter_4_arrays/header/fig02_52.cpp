@@ -1,14 +1,22 @@
 #include"fig02_52.h"
 #include<iostream>
+#include<array>
+#include<cstddef>
 
-using std::endl; using std::cout;
+using std::array; using std::cout;
 
-void printArray(int a[][3])
+constexpr size_t rows{2};
+constexpr size_t columns{3};
+
+void printArray(const array<array<int, columns>, rows>& a)
 {
-  for(int i = 0; i < 2; i++){
-    for(int j = 0; j < 3; j++)
-      cout<<a[i][j]<<' ';
+  //loop through array's rows 
+  for(const auto& row : a){
+    //loop through columns of current row 
+    for(const auto& element : row){  
+      cout<<element<<' ';
+    }
 
-    cout<< endl;
+    cout<< '\n'; //start new line of output
   }
 }

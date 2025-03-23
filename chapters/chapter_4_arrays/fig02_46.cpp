@@ -5,7 +5,7 @@ using std::cout; using std::cin; using std::endl;
 
 int main()
 {
-  char string1[20], string2[] = "string literal";
+char string1[20], string2[] = "string literal";
 
   cout<<"Entera string: ";
   cin >> string1;
