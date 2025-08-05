@@ -1,12 +1,12 @@
 #include"fig02_52.h"
 #include<iostream>
 #include<array>
-#include<cstddef>
+//#include<cstddef>
 
 using std::array; using std::cout;
 
-constexpr size_t rows{2};
-constexpr size_t columns{3};
+//constexpr size_t rows{2};
+//constexpr size_t columns{3};
 
 void printArray(const array<array<int, columns>, rows>& a)
 {
