@@ -32,4 +32,11 @@ auto values4{ values1 | views::filter([](const auto& x){return x % 2 == 0;})
                       | views::transform([](const auto& x){return x * x;})};
 showValues(values4, "Squares of even integers");
 
+cout <<format("Sum squares of even inetgers 2-10: {}\n", accumulate(begin(values4),end(values4),0));
+
+constexpr array numbers{1,2,3,4,5,6,7,8,9,10};
+auto values5{ numbers | views::filter([](const auto& x){return x % 2 == 0;})
+                      | views::transform([](const auto& x) {return x * x;})};
+showValues(values5,"Squares of even intgers in array numbers");
+
 }
