@@ -1,7 +1,7 @@
-#ifndef SIZESS_OF
-#define SIZESS_OF
+#pragma SIZESS_OF
+
 #include<iostream>
 
 size_t getSize(double* ptr);
 
-#endif
+

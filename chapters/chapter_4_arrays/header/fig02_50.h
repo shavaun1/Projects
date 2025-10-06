@@ -1,7 +1,6 @@
 //Linear search for an even # in an array
-#ifndef SEARCH_LINEAR
-#define SEARCH_LINEAR
+#pragma once
 
 int linearSearch(const int [], int, int);
 
-#endif
+

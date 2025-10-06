@@ -1,6 +1,6 @@
-#ifndef PASS_BY
-#define PASS_BY
+#pragma  PASS_BY
+
 
 int cubeByValye(int n);
 
-#endif
+

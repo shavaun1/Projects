@@ -1,7 +1,6 @@
-#ifndef STATIC_ARRAYS
-#define STATIC_ARRAYS
+#pragma once
 
 void staticArrayInit(void);
 void automaticArrayInit(void);
 
-#endif 
+ 

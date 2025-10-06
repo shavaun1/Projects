@@ -1,5 +1,5 @@
-#ifndef SPAN_Z
-#define SPAN_Z
+#pragma SPAN_Z
+
 #include<array>
 #include<iostream>
 #include<numeric>
@@ -12,4 +12,4 @@ void displayArray(const int items[], size_t size);
 void displaySpan(span<const int> items);
 void times2(span<int> items);
 
-#endif 
+ 
