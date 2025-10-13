@@ -1,5 +1,4 @@
-#ifndef GRADE_
-#define GRADE_
+#pragma GRADE_
 
 #include<algorithm>
 #include<string>
@@ -45,4 +44,4 @@ class Account
 
 };
 
-#endif
+
