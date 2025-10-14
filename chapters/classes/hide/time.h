@@ -10,10 +10,10 @@ class Time
     explicit Time(int hour = 0,int minute= 0, int second = 0);
     
     //set functions
-    void setTime(int hour, int minute, int second);
-    void setHour(int hour);
-    void setMinute(int minute);
-    void setSecond(int second);
+    Time& setTime(int hour, int minute, int second);
+    Time& setHour(int hour);
+    Time& setMinute(int minute);
+    Time& setSecond(int second);
 
     //get functions
     int getHour() const; // return hour

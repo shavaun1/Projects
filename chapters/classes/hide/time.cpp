@@ -12,7 +12,7 @@ Time::Time(int hour, int minute, int second)
 }
 
 //set new Time value using 24-hour time 
-void Time::setTime(int hour, int minute, int second)
+Time& Time::setTime(int hour, int minute, int second)
 {
   //validate hour, minute and second
   if((hour < 0 || hour >=24) || (minute < 0 || minute >= 60 )||
@@ -26,22 +26,23 @@ void Time::setTime(int hour, int minute, int second)
   m_hour = hour;
   minute = minute;
   m_second = second;
+  return *this;//enables cascading
 }
 
 //set hour value
-void Time::setHour(int hour)
+Time& Time::setHour(int hour)
 {
-  setTime(hour, m_minute, m_second);
+   return setTime(hour, m_minute, m_second);
 }
 
-void Time::setMinute(int minute)
+Time& Time::setMinute(int minute)
 {
-  setTime(m_hour, minute, m_second);
+  return setTime(m_hour, minute, m_second);
 }
 
-void Time::setSecond(int second)
+Time& Time::setSecond(int second)
 {
-  setTime(m_hour, m_minute, second);
+  return setTime(m_hour, m_minute, second);
 }
 
 //return hour value 
