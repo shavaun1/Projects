@@ -25,6 +25,12 @@ void salariedcommissionemployee::setGrossSales(double grossSales)
   m_grossSales = grossSales;
 }
 
+//return sales amount
+double salariedcommissionemployee::getGrossSales() const
+{
+  return m_grossSales;
+}
+
 //return commission rate
 void salariedcommissionemployee::setCommissionRate(double commissionRate)
 {

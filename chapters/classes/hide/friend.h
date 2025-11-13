@@ -14,7 +14,7 @@ class Count
 
 };
 
-void modifyX(Count& c, int value)
-{
-  c.m_x = value;
-}
+//void modifyX(Count& c, int value)
+//{
+  //c.m_x = value;
+//}
