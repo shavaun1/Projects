@@ -1,5 +1,4 @@
-#ifndef HIDING
-#define HIDING
+#pragma once
 #include<string_view>
 #include<string>
 using std::string_view; using std::string;
@@ -21,4 +20,4 @@ const string& getName() const
 string m_name;
 
 };
-#endif
+

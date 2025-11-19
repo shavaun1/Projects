@@ -1,5 +1,4 @@
-#ifndef NAME_
-#define NAME_
+#pragma once
 
 #include<string>
 #include<string_view>
@@ -30,4 +29,4 @@ class Account
 
 };
 
-#endif
+
