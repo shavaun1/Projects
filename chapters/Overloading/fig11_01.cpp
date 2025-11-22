@@ -3,7 +3,7 @@
 #include<string>
 #include<string_view>
 
-using std::cout; using std::format; using std::string; using std::string_view; using std::out_of_range;
+using std::cout; using std::format; using std::string; using std::string_view; using std::out_of_range; using namespace std ::string_literals;
 
 int main()
 {
@@ -44,9 +44,30 @@ int main()
   cout<<format("s1 += \" to you\" yields s1 = {}\n\n",s1);
 
   //test string concatention with c++14 string-object literal
-  using namepace std:string_literals;
+ // using namepace std:string_literals;
   s1 +=", have a great day!"s; // s after " for string-object literal
   cout<<format("s1 += \", have a great day!\"s yields\ns1 = {}\n\n",s1);
+
+  //test string member function substr
+  cout<<format("{} {}\n{}\n\n", "The substring of s1 starting at location 0 for","14 characters, s1.substr(0,14), is:",s1.substr(0,14));
+
+  //test substring "to-end-of-string"option
+  cout<<format("{} {}\n{}\n\n","The substring of s1 starting at","location 15, s1.substr(15), is:",s1.substr(15));
+
+  //test copy
+  string s4{s1};
+  cout<<format("s4 = {}\n\n",s4);
+
+  //test overloaded copy assignment (=) operator with self-assignment
+  cout<<"assigning s4 to s4\n";
+  s4 = s4;
+  cout<<format("s4 = {}\n\n",s4);
+  
+  //test string's string_view constructor
+  cout<<"intializing s5 with string_view v\n";
+  string s5{v};
+  cout<<format("s5 is {}\n\n", s5);
+
 
   //test using overloaded subscript operator to create lvalue
   s1[0] = 'H';
