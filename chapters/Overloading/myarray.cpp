@@ -72,6 +72,32 @@ int main()
   catch(const out_of_range& ex)
   {
     cout<<format("An exception occured: {}\n", ex.what());
+
   }
+
+//initialize ints4 with contents of the MyArray returned by
+//getArrayByValue; print size and contents
+cout<<"\nInitialize ints4 with temporary MyArray object\n";
+MyArray  ints4{getArrayByValue()};
+
+cout<<format("\nints4 size: {}\ncontents: ", ints4.size())
+  <<ints4;
+
+//convert ints4 to an rvalue reference with std::move and 
+//use the result to initialize MyArray ints5
+cout<<"\n\nInitialize ints5 with results of std::move(ints4)\n";
+MyArray ints5{move(ints4)}; // invokes move constructor
+
+cout<<format("\nints5 size: {}\ncontents: ", ints5.size())
+  <<ints5
+  <<format("\n\nSize of ints4 is now: {}", ints4.size());
+
+//move contents of ints5 into ints4
+cout<<"\n\nMove ints5 into ints4 via move assignment\n";
+ints4 = move(ints5); //invokes move assignment
+
+cout<<format("\nints4 size: {}\ncontents: ", ints4.size())
+  <<ints4
+  <<format("\n\nSize of ints 5 is now: {}", ints5.size());
 
 }
