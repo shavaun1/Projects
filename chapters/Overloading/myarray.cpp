@@ -100,4 +100,25 @@ cout<<format("\nints4 size: {}\ncontents: ", ints4.size())
   <<ints4
   <<format("\n\nSize of ints 5 is now: {}", ints5.size());
 
+//check if ints5 is empty by contexually converting it to a bool
+if(ints5)
+{
+  cout<<"\n\nints5 contains elements\n";
+}
+else
+{
+  cout<<"\n\nints5 is empty\n";
+}
+
+//add one to every element of ints4 using preincrement
+cout<<"\nints4: "<<ints4;
+cout<<"\npreincrementing ints4: "<<++ints4;
+
+//add one to every element of ints4 using postinrement
+cout<<"\n\nposincrementing ints4: "<<ints4++<<"\n";
+cout<<"\nints4 now contains: "<<ints4;
+
+//add a value to every element of ints4 using +=
+cout<<"\n\nAdd 7 to every ints4 element: "<<(ints4 += 7)
+<<"\n";
 }
