@@ -9,8 +9,9 @@
 #include<utility>
 #include"MyArray.h"
 
-using std::format; using std::make_unique; using std::cout; using std::initializer_list;
+using std::format; using std::make_unique; using std::cout; using std::initializer_list; using std::string;
 using std::copy; using std::begin; using std::end; using std::span; using std::exchange; using std::move;
+using std::ostringstream; using std::equal; using std::out_of_range; using std::for_each;
 //MyArray constructor to create a MyArray of size elements constructor 0
 
 MyArray::MyArray(size_t size)
@@ -79,4 +80,69 @@ MyArray& MyArray::operator=(MyArray&& right) noexcept
 MyArray::~MyArray()
 {
   cout<<"MyArray destructor\n";
+}
+
+//return a string representation of a MyArray
+string MyArray::toString() const
+{
+  const span<const int> items{m_ptr.get(), m_size};
+  ostringstream output;
+  output<<"{";
+
+  //insert each items in the dynamic array into the ostringstream
+  for(size_t count{0}; const auto& item : items)
+  {
+    ++count;
+    output << item << (count < m_size ? " ," : "");
+  }
+
+  output << "}";
+  return output.str();
+  
+}
+
+//determine if two MyArray are equal and 
+//return true, otherwise return false
+
+bool MyArray::operator==(const MyArray& right) const noexcept
+{
+  //compare corresponding elements of both MyArrays
+  const spand<const int> lhs{m_ptr.get(), size()};
+  const spand<const int> rhs{right.m_ptr.get(), right.size()};
+  return equal(beging(lhs),end(lhs),begin(rhs),end(rhs));
+}
+
+//overloaded subscript operator for non-const MyArrays;
+//reference return creates a modifiable lvalue
+int& MyArray::operator[](size_t index)
+{
+  //check for index out-of-range error
+  if(index >= m_size)
+  {
+    throw out_of_range{"Index out of range"};
+  }
+
+  return m_ptr[index]; //reference 
+}
+
+//overloaded subscript operator for const MyArrays
+//const reference return creates a non-modifiable lvalue
+const int& MyArray::operator[](size_t index) const
+{
+  //check for subscript out_of_range error
+  if(index >= m_size)
+  {
+    throw out_of_range{"Index out of range"};
+  }
+
+  return m_ptr[index]; //returns copy of this element
+}
+
+//preincrement every element, then return updated MyArray
+MyArray& MyArray::operator++()
+{
+  //use a span and for_each to increment every element 
+  const span<int> items{m_ptr.get(), m_size};
+  for_each(begin(items), end(items),[](auto& item){++item;});
+  return *this;
 }
