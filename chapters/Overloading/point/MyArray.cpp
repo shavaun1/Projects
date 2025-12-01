@@ -11,7 +11,8 @@
 
 using std::format; using std::make_unique; using std::cout; using std::initializer_list; using std::string;
 using std::copy; using std::begin; using std::end; using std::span; using std::exchange; using std::move;
-using std::ostringstream; using std::equal; using std::out_of_range; using std::for_each;
+using std::ostringstream; using std::equal; using std::out_of_range; using std::for_each; using std::istream;
+using std::ostream; using std::swap;
 //MyArray constructor to create a MyArray of size elements constructor 0
 
 MyArray::MyArray(size_t size)
@@ -145,4 +146,48 @@ MyArray& MyArray::operator++()
   const span<int> items{m_ptr.get(), m_size};
   for_each(begin(items), end(items),[](auto& item){++item;});
   return *this;
+}
+
+//postincrement every element, and return copy of original MyArray
+MyArray MyArray::operator++(int)
+{
+  MyArray temp(*this);
+  ++(*this); // call preincrement operatior++ to do the incrementing
+  return temp; // return the temporary copy made before incrementing 
+}
+
+//add value to every element, then return updated MyArray
+MyArray& MyArray::operator+=(int value)
+{
+  //use a span and for_each to increment every element
+  const span<int> items{m_ptr.get(), m_size};
+  for_each(begin(items),end(items),[value](auto& item){item += value;});
+  return this*;
+}
+
+//overloaded input operator for class MyArray;
+//input values for entire MyArray
+istream& operator>>(istream& in, MyArray& a)
+{
+  span<int> items{a.m_ptr.get(),a.m_size};
+
+  for(auto& item : items)
+  {
+    in >> item;
+  }
+  return in; //enable cin>> x >>y
+}
+
+//overloaded output operator for class MyArray
+ostream& operator<<(ostream& out, const MyArray& a)
+{
+  out<< a.toString();
+  return out; //enable cout<< x << y
+}
+
+//swap function used to implement copy-and-swap copy assigment operator
+void swap(MyArray& a, MyArray& b) noexcept
+{
+  swap(a.m_size, b.m_size);// swap using swap
+  a.m_ptr.swap(b.m_ptr); //swap using unique_ptr swap member function
 }
