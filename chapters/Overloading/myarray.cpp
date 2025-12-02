@@ -45,7 +45,7 @@ int main()
 
   //print ints3 size and constents
   cout<<format("\nints3 size: {}\ncontents: ", ints3.size())
-    <<int3; 
+    <<ints3; 
 
   //use overloaded copy assignment (=) operator
   cout<<"\n\nAssigning ints2 to ints1:\n";

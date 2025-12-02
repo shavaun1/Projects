@@ -55,7 +55,7 @@ MyArray::MyArray(initializer_list<int> list)
 
 //move constructor: must receive an rvalue reference to MyArray
 MyArray::MyArray(MyArray&& original) noexcept
-:m_size{exchange(orginal.m_size,0)},
+:m_size{exchange(original.m_size,0)},
   m_ptr{move(original.m_ptr)} //move original.m_ptr into m_ptr 
 {
   cout<<"MyArray move constructor\n";
@@ -108,9 +108,9 @@ string MyArray::toString() const
 bool MyArray::operator==(const MyArray& right) const noexcept
 {
   //compare corresponding elements of both MyArrays
-  const spand<const int> lhs{m_ptr.get(), size()};
-  const spand<const int> rhs{right.m_ptr.get(), right.size()};
-  return equal(beging(lhs),end(lhs),begin(rhs),end(rhs));
+  const span<const int> lhs{m_ptr.get(), size()};
+  const span<const int> rhs{right.m_ptr.get(), right.size()};
+  return equal(begin(lhs),end(lhs),begin(rhs),end(rhs));
 }
 
 //overloaded subscript operator for non-const MyArrays;
@@ -162,7 +162,7 @@ MyArray& MyArray::operator+=(int value)
   //use a span and for_each to increment every element
   const span<int> items{m_ptr.get(), m_size};
   for_each(begin(items),end(items),[value](auto& item){item += value;});
-  return this*;
+  return *this;
 }
 
 //overloaded input operator for class MyArray;
