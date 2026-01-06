@@ -24,4 +24,22 @@ int main()
 
   }
 
+  cout<<"\nOutput integers using iterators: ";
+
+  for(auto constIterator{integers.cbegin()};
+  constIterator != integers.cend(); ++constIterator)
+  {
+    cout<<*constIterator<<' ';
+  }
+
+  cout<<"\nOutPut integers in reverse using iterators: ";
+
+  //dispaly vector in reverse order using const_reverse_iterator
+  for(auto reverseIterator{integers.crbegin()};
+      reverseIterator != integers.crend(); ++reverseIterator)
+  {
+    cout<<*reverseIterator<<' ';
+  }
+  cout<<"\n";
+
 }
